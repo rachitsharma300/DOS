@@ -5,5 +5,6 @@ package com.dynamiconlineshopping.backend.enums;
  */
 public enum Role {
     ADMIN,
-    CUSTOMER
+    CUSTOMER,
+    USER
 }
