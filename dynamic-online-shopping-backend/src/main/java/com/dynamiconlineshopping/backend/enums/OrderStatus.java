@@ -1,4 +1,11 @@
 package com.dynamiconlineshopping.backend.enums;
 
-public class OrderStatus {
+/**
+ * Order status enum.
+ */
+public enum OrderStatus {
+    PENDING,
+    PAID,
+    CANCELLED,
+    FULFILLED
 }
