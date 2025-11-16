@@ -1,4 +1,9 @@
 package com.dynamiconlineshopping.backend.enums;
 
-public class Role {
+/**
+ * Role enum.
+ */
+public enum Role {
+    ADMIN,
+    CUSTOMER
 }
