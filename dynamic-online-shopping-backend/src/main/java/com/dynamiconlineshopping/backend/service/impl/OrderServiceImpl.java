@@ -19,9 +19,6 @@ import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * OrderServiceImpl - place order from cart and list orders.
- */
 @Service
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
@@ -31,8 +28,9 @@ public class OrderServiceImpl implements OrderService {
     private final UserRepository userRepository;
 
     private User getCurrentUser() {
-        var principal = SecurityContextHolder.getContext().getAuthentication().getName();
-        return userRepository.findByUsername(principal).orElseThrow(() -> new ResourceNotFoundException("User not found"));
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
     }
 
     private OrderResponseDto toDto(Order o) {
@@ -67,14 +65,14 @@ public class OrderServiceImpl implements OrderService {
                 .createdAt(Instant.now())
                 .build();
         Order saved = orderRepository.save(order);
-        // optionally clear cart
         cartRepository.deleteAll(items);
         return toDto(saved);
     }
 
     @Override
     public OrderResponseDto getById(Long id) {
-        Order o = orderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order not found"));
+        Order o = orderRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Order not found"));
         return toDto(o);
     }
 
