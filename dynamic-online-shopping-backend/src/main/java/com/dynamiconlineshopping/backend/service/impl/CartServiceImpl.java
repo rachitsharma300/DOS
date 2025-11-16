@@ -17,9 +17,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * CartServiceImpl - simple cart logic for current user.
- */
 @Service
 @RequiredArgsConstructor
 public class CartServiceImpl implements CartService {
@@ -29,8 +26,9 @@ public class CartServiceImpl implements CartService {
     private final UserRepository userRepository;
 
     private User getCurrentUser() {
-        var principal = SecurityContextHolder.getContext().getAuthentication().getName();
-        return userRepository.findByUsername(principal).orElseThrow(() -> new ResourceNotFoundException("User not found"));
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
     }
 
     private CartItemDto toDto(CartItem c) {
@@ -61,15 +59,22 @@ public class CartServiceImpl implements CartService {
     @Override
     public List<CartItemDto> addItem(CartItemDto dto) {
         User user = getCurrentUser();
-        Product product = productRepository.findById(dto.getProductId()).orElseThrow(() -> new ResourceNotFoundException("Product not found"));
-        CartItem item = CartItem.builder().user(user).product(product).quantity(dto.getQuantity()).build();
+        Product product = productRepository.findById(dto.getProductId())
+                .orElseThrow(() -> new ResourceNotFoundException("Product not found"));
+
+        CartItem item = CartItem.builder()
+                .user(user)
+                .product(product)
+                .quantity(dto.getQuantity())
+                .build();
         cartRepository.save(item);
         return getCartForCurrentUser();
     }
 
     @Override
     public List<CartItemDto> updateItem(Long cartItemId, CartItemDto dto) {
-        CartItem item = cartRepository.findById(cartItemId).orElseThrow(() -> new ResourceNotFoundException("CartItem not found"));
+        CartItem item = cartRepository.findById(cartItemId)
+                .orElseThrow(() -> new ResourceNotFoundException("CartItem not found"));
         item.setQuantity(dto.getQuantity());
         cartRepository.save(item);
         return getCartForCurrentUser();
@@ -77,7 +82,8 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public List<CartItemDto> removeItem(Long cartItemId) {
-        CartItem item = cartRepository.findById(cartItemId).orElseThrow(() -> new ResourceNotFoundException("CartItem not found"));
+        CartItem item = cartRepository.findById(cartItemId)
+                .orElseThrow(() -> new ResourceNotFoundException("CartItem not found"));
         cartRepository.delete(item);
         return getCartForCurrentUser();
     }
