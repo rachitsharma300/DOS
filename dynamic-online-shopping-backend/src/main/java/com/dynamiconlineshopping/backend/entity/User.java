@@ -4,11 +4,6 @@ import com.dynamiconlineshopping.backend.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
-
-/**
- * User entity (minimal).
- */
 @Entity
 @Table(name = "users")
 @Getter
@@ -18,18 +13,18 @@ import java.util.Set;
 @Builder
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true, nullable = false)
-    private String username; // email or username
+    private String email;
 
     @Column(nullable = false)
     private String password;
 
     private String fullName;
 
-    @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
-    private Set<Role> roles;
+    private Role role;
 }
