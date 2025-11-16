@@ -20,19 +20,19 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping("/place")
-    @PreAuthorize("hasAuthority('CUSTOMER')")
+//    @PreAuthorize("hasAuthority('CUSTOMER')")
     public ResponseEntity<OrderResponseDto> placeOrder() {
         return ResponseEntity.status(201).body(orderService.placeOrderForCurrentUser());
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+//    @PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
     public ResponseEntity<OrderResponseDto> getOrder(@PathVariable Long id) {
         return ResponseEntity.ok(orderService.getById(id));
     }
 
     @GetMapping
-    @PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
+//    @PreAuthorize("hasAnyAuthority('CUSTOMER','ADMIN')")
     public ResponseEntity<List<OrderResponseDto>> listOrders() {
         return ResponseEntity.ok(orderService.listOrdersForCurrentUser());
     }
