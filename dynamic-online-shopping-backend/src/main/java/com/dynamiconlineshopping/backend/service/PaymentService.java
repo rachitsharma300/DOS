@@ -1,4 +1,9 @@
 package com.dynamiconlineshopping.backend.service;
 
-public class PaymentService {
+/**
+ * PaymentService - handles payment gateway integration.
+ */
+public interface PaymentService {
+    Object createRazorpayOrder(Long orderId);
+    Object verifyPayment(String payload);
 }
