@@ -11,17 +11,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
-import java.util.Set;
 
-/**
- * AuthServiceImpl - registration, login, and UserDetailsService impl.
- */
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
@@ -33,38 +28,53 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public Object register(RegisterRequest request) {
-        if (userRepository.findByUsername(request.getUsername()).isPresent()) {
-            throw new RuntimeException("Username already exists");
+        if (userRepository.findByEmail(request.getEmail()).isPresent()) {
+            throw new RuntimeException("Email already exists");
         }
+
         User user = User.builder()
-                .username(request.getUsername())
+                .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .fullName(request.getFullName())
-                .roles(Set.of(Role.CUSTOMER))
+                .fullName(request.getName())
+                .role(Role.CUSTOMER)
                 .build();
+
         userRepository.save(user);
-        String token = jwtUtil.generateToken(user.getUsername(), Map.of("roles", "CUSTOMER"));
-        return Map.of("token", token);
+
+        return Map.of(
+                "message", "User registered successfully",
+                "userId", user.getId(),
+                "email", user.getEmail()
+        );
     }
 
     @Override
     public Object login(AuthRequest request) {
         authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
+                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
         );
-        User user = userRepository.findByUsername(request.getUsername())
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-        String token = jwtUtil.generateToken(user.getUsername(), Map.of("roles", "CUSTOMER"));
-        return Map.of("token", token);
+
+        User user = userRepository.findByEmail(request.getEmail())
+                .orElseThrow(() -> new RuntimeException("Invalid credentials"));
+
+        String token = jwtUtil.generateToken(user.getEmail());
+
+        return Map.of(
+                "token", token,
+                "email", user.getEmail(),
+                "role", user.getRole(),
+                "name", user.getFullName()
+        );
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-        return org.springframework.security.core.userdetails.User.withUsername(user.getUsername())
-                .password(user.getPassword())
-                .authorities(user.getRoles().stream().map(Enum::name).toArray(String[]::new))
-                .build();
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        return userRepository.findByEmail(email)
+                .map(user -> new org.springframework.security.core.userdetails.User(
+                        user.getEmail(),
+                        user.getPassword(),
+                        java.util.List.of(new org.springframework.security.core.authority.SimpleGrantedAuthority("ROLE_" + user.getRole()))
+                ))
+                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + email));
     }
 }
