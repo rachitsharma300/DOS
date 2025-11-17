@@ -60,3 +60,49 @@ resources
 ├── templates
 └── application.properties
 ```
+
+## 📁 Project Structure
+
+dynamic-online-shopping-frontend/
+├── node_modules/
+├── public/
+├── src/
+│ ├── assets/
+│ ├── components/
+│ │ ├── auth/
+│ │ │ ├── Login.jsx
+│ │ │ └── Register.jsx
+│ │ ├── cart/
+│ │ │ └── CartItem.jsx
+│ │ ├── common/
+│ │ │ ├── Footer.jsx
+│ │ │ ├── Header.jsx
+│ │ │ └── LoadingSpinner.jsx
+│ │ ├── orders/
+│ │ │ ├── OrderCard.jsx
+│ │ │ └── OrderList.jsx
+│ │ └── products/
+│ │ ├── ProductCard.jsx
+│ │ ├── ProductDetails.jsx
+│ │ └── ProductList.jsx
+│ ├── context/
+│ │ └── AuthContext.jsx
+│ ├── pages/
+│ │ ├── AdminDashboard.jsx
+│ │ ├── Cart.jsx
+│ │ ├── Home.jsx
+│ │ ├── Orders.jsx
+│ │ ├── Products.jsx
+│ │ └── Profile.jsx
+│ ├── services/
+│ ├── apis/
+│ ├── utils/
+│ │ ├── constants.js
+│ │ └── razoppy.js
+│ ├── App.css
+│ ├── App.jsx
+│ ├── index.css
+│ └── main.jsx
+└── package.json
+
+
