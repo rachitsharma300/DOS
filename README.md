@@ -63,6 +63,7 @@ resources
 
 ## 📁 Project Structure
 
+```
 dynamic-online-shopping-frontend/
 ├── node_modules/
 ├── public/
@@ -105,4 +106,4 @@ dynamic-online-shopping-frontend/
 │ └── main.jsx
 └── package.json
 
-
+```
