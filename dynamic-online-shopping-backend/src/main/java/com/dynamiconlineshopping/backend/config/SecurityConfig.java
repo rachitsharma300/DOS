@@ -1,6 +1,5 @@
 package com.dynamiconlineshopping.backend.config;
 
-import com.dynamiconlineshopping.backend.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,8 +29,23 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> {})
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**", "/api/products/**").permitAll() // ✅ Products public kar diye
-                        .requestMatchers("/api/cart/**", "/api/orders/**", "/api/payments/**").authenticated() // ✅ Authenticated users ko allow
+                        // Public endpoints
+                        .requestMatchers(
+                                "/api/auth/**",
+                                "/api/products",
+                                "/api/products/**"
+                        ).permitAll()
+
+                        // Admin endpoints
+                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
+
+                        //  All authenticated users can access cart, orders, payments
+                        .requestMatchers(
+                                "/api/cart/**",
+                                "/api/orders/**",
+                                "/api/payments/**"
+                        ).authenticated()
+
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
