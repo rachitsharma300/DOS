@@ -45,7 +45,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> getAll() {
-        return productRepository.findAll().stream().map(this::toDto).collect(Collectors.toList());
+        try {
+            return productRepository.findAll().stream()
+                    .map(this::toDto)
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            return List.of();
+        }
     }
 
     @Override
@@ -56,26 +62,44 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDto create(ProductDto dto) {
-        Product saved = productRepository.save(toEntity(dto));
-        return toDto(saved);
+        try {
+            Product product = toEntity(dto);
+            Product saved = productRepository.save(product);
+            return toDto(saved);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create product: " + e.getMessage());
+        }
     }
 
     @Override
     public ProductDto update(Long id, ProductDto dto) {
-        Product existing = productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product not found"));
-        existing.setTitle(dto.getTitle());
-        existing.setDescription(dto.getDescription());
-        existing.setPrice(dto.getPrice());
-        existing.setStock(dto.getStock());
-        existing.setSku(dto.getSku());
-        existing.setImageUrl(dto.getImageUrl());
-        Product updated = productRepository.save(existing);
-        return toDto(updated);
+        try {
+            Product existing = productRepository.findById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("Product not found"));
+
+            // Update fields
+            existing.setTitle(dto.getTitle());
+            existing.setDescription(dto.getDescription());
+            existing.setPrice(dto.getPrice());
+            existing.setStock(dto.getStock());
+            existing.setSku(dto.getSku());
+            existing.setImageUrl(dto.getImageUrl());
+
+            Product updated = productRepository.save(existing);
+            return toDto(updated);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to update product: " + e.getMessage());
+        }
     }
 
     @Override
     public void delete(Long id) {
-        Product existing = productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product not found"));
-        productRepository.delete(existing);
+        try {
+            Product existing = productRepository.findById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("Product not found"));
+            productRepository.delete(existing);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to delete product: " + e.getMessage());
+        }
     }
 }
