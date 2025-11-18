@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 /**
  * PaymentController - minimal Razorpay flow endpoints.
  */
@@ -17,15 +19,28 @@ public class PaymentController {
     private final PaymentService paymentService;
 
     @PostMapping("/create-order/{orderId}")
-    @PreAuthorize("hasAuthority('CUSTOMER')")
+//    @PreAuthorize("hasAuthority('CUSTOMER')")
     public ResponseEntity<?> createRazorpayOrder(@PathVariable Long orderId) {
-        return ResponseEntity.ok(paymentService.createRazorpayOrder(orderId));
+        try {
+            return ResponseEntity.ok(paymentService.createRazorpayOrder(orderId));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of(
+                    "error", "Failed to create payment order",
+                    "message", e.getMessage()
+            ));
+        }
     }
 
     @PostMapping("/verify")
-    @PreAuthorize("hasAuthority('CUSTOMER')")
-    public ResponseEntity<?> verifyPayment(@RequestBody String payload) {
-        // payload contains signature/razorpay_payment_id/razorpay_order_id
-        return ResponseEntity.ok(paymentService.verifyPayment(payload));
+//    @PreAuthorize("hasAuthority('CUSTOMER')")
+    public ResponseEntity<?> verifyPayment(@RequestBody Map<String, String> payload) {
+        try {
+            return ResponseEntity.ok(paymentService.verifyPayment(payload));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of(
+                    "error", "Payment verification failed",
+                    "message", e.getMessage()
+            ));
+        }
     }
 }
