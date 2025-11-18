@@ -34,19 +34,20 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private OrderResponseDto toDto(Order o) {
-        List<CartItemDto> items = cartRepository.findByUser(o.getUser()).stream().map(c -> CartItemDto.builder()
-                .id(c.getId())
-                .productId(c.getProduct().getId())
-                .quantity(c.getQuantity())
-                .build()).collect(Collectors.toList());
+//        List<CartItemDto> items = cartRepository.findByUser(o.getUser()).stream().map(c -> CartItemDto.builder()
+//                .id(c.getId())
+//                .productId(c.getProduct().getId())
+//                .quantity(c.getQuantity())
+//                .build()).collect(Collectors.toList());
 
         return OrderResponseDto.builder()
                 .id(o.getId())
                 .totalAmount(o.getTotalAmount())
                 .status(o.getStatus())
                 .createdAt(o.getCreatedAt())
-                .items(items)
+                .items(List.of())
                 .razorpayOrderId(o.getRazorpayOrderId())
+                .user(o.getUser())
                 .build();
     }
 
@@ -80,5 +81,45 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderResponseDto> listOrdersForCurrentUser() {
         User user = getCurrentUser();
         return orderRepository.findByUser(user).stream().map(this::toDto).collect(Collectors.toList());
+    }
+
+
+// Add these methods to your existing OrderServiceImpl:
+
+    @Override
+    public List<OrderResponseDto> getAllOrders() {
+        try {
+            return orderRepository.findAll().stream()
+                    .map(this::toDto)
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            return List.of(); // Return empty list if error
+        }
+    }
+
+    @Override
+    public List<OrderResponseDto> getOrdersByStatus(OrderStatus status) {
+        try {
+            return orderRepository.findByStatus(status).stream()
+                    .map(this::toDto)
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            return List.of();
+        }
+    }
+
+    @Override
+    public OrderResponseDto updateOrderStatus(Long orderId, OrderStatus status) {
+        try {
+            Order order = orderRepository.findById(orderId)
+                    .orElseThrow(() -> new ResourceNotFoundException("Order not found"));
+
+            order.setStatus(status);
+            Order updatedOrder = orderRepository.save(order);
+
+            return toDto(updatedOrder);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to update order status: " + e.getMessage());
+        }
     }
 }
