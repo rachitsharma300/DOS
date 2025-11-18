@@ -1,5 +1,6 @@
 package com.dynamiconlineshopping.backend.dto;
 
+import com.dynamiconlineshopping.backend.entity.User;
 import com.dynamiconlineshopping.backend.enums.OrderStatus;
 import lombok.*;
 
@@ -21,4 +22,5 @@ public class OrderResponseDto {
     private Instant createdAt;
     private List<CartItemDto> items;
     private String razorpayOrderId;
+    private User user;
 }

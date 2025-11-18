@@ -57,7 +57,8 @@ public class AuthServiceImpl implements AuthService {
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new RuntimeException("Invalid credentials"));
 
-        String token = jwtUtil.generateToken(user.getEmail());
+        // Include role in JWT token generation
+        String token = jwtUtil.generateToken(user.getEmail(), user.getRole().name());
 
         return Map.of(
                 "token", token,
