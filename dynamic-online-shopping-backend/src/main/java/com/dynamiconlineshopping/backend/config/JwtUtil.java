@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.security.Key;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 @Component
@@ -21,20 +22,13 @@ public class JwtUtil {
     @Value("${app.jwt.expirationMs}")
     private long jwtExpirationMs;
 
-    // Generate token with only username
-    public String generateToken(String username) {
-        return Jwts.builder()
-                .setSubject(username)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
-                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
-                .compact();
-    }
+    // Generate token with username and role
+    public String generateToken(String username, String role) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("role", role);
 
-    // Generate token with custom claims (BEST PRACTICE)
-    public String generateToken(String username, Map<String, Object> extraClaims) {
         return Jwts.builder()
-                .setClaims(extraClaims)
+                .setClaims(claims)
                 .setSubject(username)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
@@ -45,6 +39,11 @@ public class JwtUtil {
     // Extract username from token
     public String extractUsername(String token) {
         return extractAllClaims(token).getSubject();
+    }
+
+    // Extract role from token
+    public String extractRole(String token) {
+        return extractAllClaims(token).get("role", String.class);
     }
 
     // Validate Token
