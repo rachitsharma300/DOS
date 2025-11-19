@@ -355,3 +355,7 @@ dynamic-online-shopping-frontend/
 └── package.json
 
 ```
+👨‍💻 Author
+
+Rachit Sharma
+rachitsharma300
