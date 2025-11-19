@@ -1,6 +1,6 @@
 ## Dynamic Online Shopping - Ecommerce Platform
 
-### A full-featured Ecommerce System built with Spring Boot & React that supports:
+A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 · User authentication and authorization
 · Product catalog and management
@@ -137,6 +137,18 @@ PUT /api/admin/products/{id} Update product Admin
 DELETE /api/admin/products/{id} Delete product Admin
 PUT /api/admin/orders/{orderId}/status Update order status Admin
 PUT /api/admin/users/{userId}/role Update user role Admin
+
+🗄 Database Schema
+
+📊 Key Entities Overview
+
+Entity Important Fields
+Users id, username, email, password, role
+Products id, name, description, price, category, image, stock
+Cart id, user_id, product_id, quantity
+Orders id, user_id, total_amount, status, created_at
+Order_Items id, order_id, product_id, quantity, price
+Payments id, order_id, amount, status, razorpay_order_id
 
 
 ## Project Structure
