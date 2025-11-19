@@ -40,6 +40,13 @@
 · Order history
 · Invoice generation
 
+💳 Payment Integration
+
+· Razorpay payment gateway
+· Secure payment processing
+· Payment status tracking
+· Order confirmation
+
 
 
 ## Project Structure
