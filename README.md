@@ -176,6 +176,15 @@ Create PostgreSQL database:
 ```sql
 CREATE DATABASE dynamiconline;
 ```
+3️⃣ Update application.properties
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/dynamiconline
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+```
+
+
 
 ```
 
