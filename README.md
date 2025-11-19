@@ -47,6 +47,13 @@
 · Payment status tracking
 · Order confirmation
 
+🔐 Security & Authentication
+
+· JWT-based secure authentication
+· Password hashing using BCrypt
+· Role-based access control
+· CORS enabled for frontend integration
+
 
 
 ## Project Structure
