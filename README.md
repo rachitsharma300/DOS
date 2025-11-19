@@ -189,6 +189,15 @@ spring.datasource.password=your_password
 ```bash
 ./mvnw spring-boot:run
 ```
+5️⃣ Run the Frontend Application
+
+```bash
+cd ../frontend
+npm install
+npm start
+```
+
+
 
 ```
 
