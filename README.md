@@ -111,6 +111,12 @@ POST /api/cart Add item to cart User
 PUT /api/cart/{id} Update cart item User
 DELETE /api/cart/{id} Remove from cart User
 
+📦 Order Endpoints
+
+Method Endpoint Description Access
+POST /api/orders/place Place new order User
+GET /api/orders Get user orders User
+GET /api/orders/{id} Get order by ID User
 ---
 
 ## Project Structure
