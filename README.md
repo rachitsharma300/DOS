@@ -77,7 +77,12 @@ HTTP Client Axios
 State Management React Context API
 UI Components Custom CSS/Tailwind
 
+☁️ Cloud Services
 
+Service Provider
+Backend Deployment Render
+Frontend Deployment Netlify
+Database PostgreSQL (Render)
 
 ## Project Structure
 ```
