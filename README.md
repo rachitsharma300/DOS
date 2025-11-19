@@ -214,6 +214,24 @@ Frontend (Netlify)
 · Publish Directory: build
 · Environment Variable: REACT_APP_API_URL=https://your-backend.onrender.com/api
 
+
+
+🔐 Environment Variables
+
+Backend (Render)
+
+```
+JDBC_DATABASE_URL=postgresql://your_database_url
+SPRING_DATASOURCE_USERNAME=your_username
+SPRING_DATASOURCE_PASSWORD=your_password
+JWT_SECRET=your_jwt_secret
+RAZORPAY_KEY_ID=your_razorpay_key
+RAZORPAY_KEY_SECRET=your_razorpay_secret
+PORT=8080
+CORS_ALLOWED_ORIGINS=https://your-frontend.netlify.app
+```
+
+
 ```
 
 com.dynamiconlineshopping.backend
