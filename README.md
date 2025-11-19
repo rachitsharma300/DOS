@@ -19,6 +19,14 @@
 · Order history tracking
 · Secure authentication
 
+🏪 Product Catalog
+
+· Browse products with categories
+· Product search and filtering
+· Product details with images
+· Stock management
+
+
 
 ## Project Structure
 ```
