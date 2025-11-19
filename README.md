@@ -184,7 +184,11 @@ spring.datasource.username=your_username
 spring.datasource.password=your_password
 ```
 
+4️⃣ Run the Backend Application
 
+```bash
+./mvnw spring-boot:run
+```
 
 ```
 
