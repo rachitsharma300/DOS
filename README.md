@@ -103,7 +103,13 @@ PUT /api/products/{id} Update product Admin
 DELETE /api/products/{id} Delete product Admin
 
 ---
+🛒 Cart Endpoints
 
+Method Endpoint Description Access
+GET /api/cart Get user cart User
+POST /api/cart Add item to cart User
+PUT /api/cart/{id} Update cart item User
+DELETE /api/cart/{id} Remove from cart User
 
 ---
 
