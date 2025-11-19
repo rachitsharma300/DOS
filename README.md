@@ -158,8 +158,21 @@ Prerequisites
 · Maven 3.6+
 · Node.js 18+
 
+
+
+Local Development Setup
+
+1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/rachitsharma300/DOS.git
+cd DOS/dynamic-online-shopping-backend
 ## Project Structure
 ```
+
+
+```
+
 com.dynamiconlineshopping.backend
 ├── config
 │ ├── CorsConfig
