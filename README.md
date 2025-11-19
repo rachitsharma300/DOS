@@ -84,6 +84,16 @@ Backend Deployment Render
 Frontend Deployment Netlify
 Database PostgreSQL (Render)
 
+📋 API Endpoints
+
+🔑 Authentication Endpoints
+
+Method Endpoint Description Access
+POST /api/auth/register User Registration Public
+POST /api/auth/login Login & Token Issuance Public
+
+---
+
 ## Project Structure
 ```
 com.dynamiconlineshopping.backend
