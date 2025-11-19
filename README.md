@@ -206,6 +206,14 @@ Backend (Render)
 · Build Command: ./mvnw clean package -DskipTests
 · Start Command: java -jar target/dynamic-online-shopping-backend-0.0.1-SNAPSHOT.jar
 
+
+Frontend (Netlify)
+
+· Connect GitHub repository
+· Build Command: npm run build
+· Publish Directory: build
+· Environment Variable: REACT_APP_API_URL=https://your-backend.onrender.com/api
+
 ```
 
 com.dynamiconlineshopping.backend
