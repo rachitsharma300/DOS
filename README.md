@@ -119,6 +119,13 @@ GET /api/orders Get user orders User
 GET /api/orders/{id} Get order by ID User
 ---
 
+💳 Payment Endpoints
+
+Method Endpoint Description Access
+POST /api/payments/create-order/{orderId} Create payment order User
+POST /api/payments/verify Verify payment User
+
+
 ## Project Structure
 ```
 com.dynamiconlineshopping.backend
