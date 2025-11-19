@@ -1,3 +1,17 @@
+Dynamic Online Shopping - Ecommerce Platform
+
+A full-featured Ecommerce System built with Spring Boot & React that supports:
+
+· User authentication and authorization
+· Product catalog and management
+· Shopping cart functionality
+· Order processing system
+· Razorpay payment integration
+· Admin dashboard for management
+
+---
+
+
 ## Project Structure
 ```
 com.dynamiconlineshopping.backend
