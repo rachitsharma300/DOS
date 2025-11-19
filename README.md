@@ -149,7 +149,14 @@ Cart id, user_id, product_id, quantity
 Orders id, user_id, total_amount, status, created_at
 Order_Items id, order_id, product_id, quantity, price
 Payments id, order_id, amount, status, razorpay_order_id
+⚙️ Installation & Setup
 
+Prerequisites
+
+· Java 21+
+· PostgreSQL 15+
+· Maven 3.6+
+· Node.js 18+
 
 ## Project Structure
 ```
