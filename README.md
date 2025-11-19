@@ -237,6 +237,15 @@ Frontend (Netlify)
 REACT_APP_API_URL=https://your-backend.onrender.com/api
 ```
 
+🧪 Testing
+
+Run Backend Tests
+
+```bash
+./mvnw test
+```
+
+
 ```
 
 com.dynamiconlineshopping.backend
