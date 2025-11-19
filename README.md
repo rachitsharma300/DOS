@@ -26,6 +26,13 @@
 · Product details with images
 · Stock management
 
+🛒 Shopping Cart
+
+· Add/remove items from cart
+· Quantity management
+· Cart persistence across sessions
+· Price calculations
+
 
 
 ## Project Structure
