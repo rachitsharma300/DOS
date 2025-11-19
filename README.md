@@ -68,6 +68,15 @@ Testing JUnit 5, Mockito
 Build Tool Maven
 Java Version JDK 21
 
+⚡ Frontend
+
+Component Technology
+Framework React 18
+Routing React Router DOM
+HTTP Client Axios
+State Management React Context API
+UI Components Custom CSS/Tailwind
+
 
 
 ## Project Structure
