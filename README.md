@@ -231,6 +231,11 @@ PORT=8080
 CORS_ALLOWED_ORIGINS=https://your-frontend.netlify.app
 ```
 
+Frontend (Netlify)
+
+```
+REACT_APP_API_URL=https://your-backend.onrender.com/api
+```
 
 ```
 
