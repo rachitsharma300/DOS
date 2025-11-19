@@ -2,16 +2,22 @@
 
 ### A full-featured Ecommerce System built with Spring Boot & React that supports:
 
-'''
 · User authentication and authorization
 · Product catalog and management
 · Shopping cart functionality
 · Order processing system
 · Razorpay payment integration
 · Admin dashboard for management
-
-'''
 ---
+
+🚀 Features
+
+👥 User Management
+
+· User registration and login
+· Profile management
+· Order history tracking
+· Secure authentication
 
 
 ## Project Structure
