@@ -92,6 +92,19 @@ Method Endpoint Description Access
 POST /api/auth/register User Registration Public
 POST /api/auth/login Login & Token Issuance Public
 
+
+🏪 Product Endpoints
+
+Method Endpoint Description Access
+GET /api/products Get all products Public
+GET /api/products/{id} Get product by ID Public
+POST /api/products Create new product Admin
+PUT /api/products/{id} Update product Admin
+DELETE /api/products/{id} Delete product Admin
+
+---
+
+
 ---
 
 ## Project Structure
