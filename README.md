@@ -33,6 +33,13 @@
 · Cart persistence across sessions
 · Price calculations
 
+📦 Order Management
+
+· Order placement
+· Order status tracking
+· Order history
+· Invoice generation
+
 
 
 ## Project Structure
