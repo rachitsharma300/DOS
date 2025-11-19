@@ -125,6 +125,19 @@ Method Endpoint Description Access
 POST /api/payments/create-order/{orderId} Create payment order User
 POST /api/payments/verify Verify payment User
 
+👨‍💼 Admin Endpoints
+
+Method Endpoint Description Access
+GET /api/admin/dashboard/stats Dashboard statistics Admin
+GET /api/admin/products Get all products Admin
+GET /api/admin/orders Get all orders Admin
+GET /api/admin/users Get all users Admin
+POST /api/admin/products Create product Admin
+PUT /api/admin/products/{id} Update product Admin
+DELETE /api/admin/products/{id} Delete product Admin
+PUT /api/admin/orders/{orderId}/status Update order status Admin
+PUT /api/admin/users/{userId}/role Update user role Admin
+
 
 ## Project Structure
 ```
