@@ -1,4 +1,4 @@
-## Dynamic Online Shopping - Ecommerce Platform
+# 🛒 Dynamic Online Shopping – Ecommerce Platform
 
 A full-featured Ecommerce System built with Spring Boot & React that supports:
 
@@ -10,59 +10,55 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 - Admin dashboard for management
 ---
 
-🚀 Features
-
+## 🚀 Features
 👥 User Management
+- User registration and login
+- Profile management
+- Order history tracking
+- Secure authentication
 
-· User registration and login
-· Profile management
-· Order history tracking
-· Secure authentication
+## 🏪 Product Catalog
 
-🏪 Product Catalog
+- Browse products with categories
+- Product search and filtering
+- Product details with images
+- Stock management
 
-· Browse products with categories
-· Product search and filtering
-· Product details with images
-· Stock management
+## 🛒 Shopping Cart
 
-🛒 Shopping Cart
+- Add/remove items from cart
+- Quantity management
+- Cart persistence across sessions
+- Price calculations
 
-· Add/remove items from cart
-· Quantity management
-· Cart persistence across sessions
-· Price calculations
+## 📦 Order Management
 
-📦 Order Management
+- Order placement
+- Order status tracking
+- Order history
+- Invoice generation
 
-· Order placement
-· Order status tracking
-· Order history
-· Invoice generation
+## 💳 Payment Integration
 
-💳 Payment Integration
+- Razorpay payment gateway
+- Secure payment processing
+- Payment status tracking
+- Order confirmation
 
-· Razorpay payment gateway
-· Secure payment processing
-· Payment status tracking
-· Order confirmation
+## 🔐 Security & Authentication
 
-🔐 Security & Authentication
+- JWT-based secure authentication
+- Password hashing using BCrypt
+- Role-based access control
+- CORS enabled for frontend integration
 
-· JWT-based secure authentication
-· Password hashing using BCrypt
-· Role-based access control
-· CORS enabled for frontend integration
-
-
-🛠 Tech Stack
-
+## Tech Stack
 🧩 Backend
 
-Component Technology
-Framework Spring Boot 3.5.7
-Security Spring Security 6.5.5 + JWT
-Database PostgreSQL + Spring Data JPA
+- Component Technology
+- Framework Spring Boot 3.5.7
+- Security Spring Security 6.5.5 + JWT
+- Database PostgreSQL + Spring Data JPA
 API Docs Swagger / OpenAPI 3.1
 Testing JUnit 5, Mockito
 Build Tool Maven
