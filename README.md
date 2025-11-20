@@ -373,5 +373,5 @@ dynamic-online-shopping-frontend/
 
 ## 👨‍💻 Author
 
-- Rachit Sharma
-- rachitsharma300
+Rachit Sharma
+Github: rachitsharma300
