@@ -112,11 +112,12 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 
 📦 Order Endpoints
+| Method | Endpoint            | Description     | Access   |
+| ------ | ------------------- | --------------- | -------- |
+| POST   | `/api/orders/place` | Place order     | **User** |
+| GET    | `/api/orders`       | Get user orders | **User** |
+| GET    | `/api/orders/{id}`  | Get order by ID | **User** |
 
-Method Endpoint Description Access
-POST /api/orders/place Place new order User
-GET /api/orders Get user orders User
-GET /api/orders/{id} Get order by ID User
 ---
 
 💳 Payment Endpoints
