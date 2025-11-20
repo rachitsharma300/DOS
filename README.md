@@ -371,7 +371,7 @@ dynamic-online-shopping-frontend/
 ```
 </details>
 
-👨‍💻 Author
+## 👨‍💻 Author
 
-Rachit Sharma
-rachitsharma300
+- Rachit Sharma
+- rachitsharma300
