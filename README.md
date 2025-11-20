@@ -92,13 +92,14 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 
 🏪 Product Endpoints
+| Method | Endpoint             | Description       | Access     |
+| ------ | -------------------- | ----------------- | ---------- |
+| GET    | `/api/products`      | Get all products  | **Public** |
+| GET    | `/api/products/{id}` | Get product by ID | **Public** |
+| POST   | `/api/products`      | Create product    | **Admin**  |
+| PUT    | `/api/products/{id}` | Update product    | **Admin**  |
+| DELETE | `/api/products/{id}` | Delete product    | **Admin**  |
 
-Method Endpoint Description Access
-GET /api/products Get all products Public
-GET /api/products/{id} Get product by ID Public
-POST /api/products Create new product Admin
-PUT /api/products/{id} Update product Admin
-DELETE /api/products/{id} Delete product Admin
 
 ---
 🛒 Cart Endpoints
