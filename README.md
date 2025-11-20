@@ -91,7 +91,7 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 | POST   | `/api/auth/login`    | Login & Token Issue | **Public** |
 
 
-🏪 Product Endpoints
+## 🏪 Product Endpoints
 | Method | Endpoint             | Description       | Access     |
 | ------ | -------------------- | ----------------- | ---------- |
 | GET    | `/api/products`      | Get all products  | **Public** |
@@ -102,7 +102,7 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 
 ---
-🛒 Cart Endpoints
+## 🛒 Cart Endpoints
 | Method | Endpoint         | Description      | Access   |
 | ------ | ---------------- | ---------------- | -------- |
 | GET    | `/api/cart`      | Get user cart    | **User** |
@@ -111,7 +111,7 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 | DELETE | `/api/cart/{id}` | Remove item      | **User** |
 
 
-📦 Order Endpoints
+## 📦 Order Endpoints
 | Method | Endpoint            | Description     | Access   |
 | ------ | ------------------- | --------------- | -------- |
 | POST   | `/api/orders/place` | Place order     | **User** |
@@ -120,7 +120,7 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 ---
 
-💳 Payment Endpoints
+## 💳 Payment Endpoints
 | Method | Endpoint                               | Description    | Access   |
 | ------ | -------------------------------------- | -------------- | -------- |
 | POST   | `/api/payments/create-order/{orderId}` | Create payment | **User** |
@@ -128,7 +128,7 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 ---
 
-👨‍💼 Admin Endpoints
+## 👨‍💼 Admin Endpoints
 | Method | Endpoint                             | Description         | Access    |
 | ------ | ------------------------------------ | ------------------- | --------- |
 | GET    | `/api/admin/dashboard/stats`         | Dashboard stats     | **Admin** |
@@ -141,20 +141,22 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 | PUT    | `/api/admin/orders/{orderId}/status` | Update order status | **Admin** |
 | PUT    | `/api/admin/users/{userId}/role`     | Update user role    | **Admin** |
 
+---
 
-🗄 Database Schema
-
+## 🗄 Database Schema
 📊 Key Entities Overview
+| Entity          | Important Fields                                     |
+| --------------- | ---------------------------------------------------- |
+| **Users**       | id, username, email, password, role                  |
+| **Products**    | id, name, description, price, category, image, stock |
+| **Cart**        | id, user_id, product_id, quantity                    |
+| **Orders**      | id, user_id, total_amount, status, created_at        |
+| **Order Items** | id, order_id, product_id, quantity, price            |
+| **Payments**    | id, order_id, amount, status, razorpay_order_id      |
 
-Entity Important Fields
-Users id, username, email, password, role
-Products id, name, description, price, category, image, stock
-Cart id, user_id, product_id, quantity
-Orders id, user_id, total_amount, status, created_at
-Order_Items id, order_id, product_id, quantity, price
-Payments id, order_id, amount, status, razorpay_order_id
-⚙️ Installation & Setup
+---
 
+##⚙️ Installation & Setup
 Prerequisites
 
 · Java 21+
