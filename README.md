@@ -73,12 +73,12 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 - State Management React Context API
 - UI Components Custom CSS/Tailwind
 
-☁️ Cloud Services
+## ☁️ Cloud Services
 
-Service Provider
-Backend Deployment Render
-Frontend Deployment Netlify
-Database PostgreSQL (Render)
+- Service Provider
+- Backend Deployment Render
+- Frontend Deployment Netlify
+- Database PostgreSQL (Render)
 
 📋 API Endpoints
 
