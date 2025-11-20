@@ -129,17 +129,18 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 ---
 
 👨‍💼 Admin Endpoints
+| Method | Endpoint                             | Description         | Access    |
+| ------ | ------------------------------------ | ------------------- | --------- |
+| GET    | `/api/admin/dashboard/stats`         | Dashboard stats     | **Admin** |
+| GET    | `/api/admin/products`                | All products        | **Admin** |
+| GET    | `/api/admin/orders`                  | All orders          | **Admin** |
+| GET    | `/api/admin/users`                   | All users           | **Admin** |
+| POST   | `/api/admin/products`                | Create product      | **Admin** |
+| PUT    | `/api/admin/products/{id}`           | Update product      | **Admin** |
+| DELETE | `/api/admin/products/{id}`           | Delete product      | **Admin** |
+| PUT    | `/api/admin/orders/{orderId}/status` | Update order status | **Admin** |
+| PUT    | `/api/admin/users/{userId}/role`     | Update user role    | **Admin** |
 
-Method Endpoint Description Access
-GET /api/admin/dashboard/stats Dashboard statistics Admin
-GET /api/admin/products Get all products Admin
-GET /api/admin/orders Get all orders Admin
-GET /api/admin/users Get all users Admin
-POST /api/admin/products Create product Admin
-PUT /api/admin/products/{id} Update product Admin
-DELETE /api/admin/products/{id} Delete product Admin
-PUT /api/admin/orders/{orderId}/status Update order status Admin
-PUT /api/admin/users/{userId}/role Update user role Admin
 
 🗄 Database Schema
 
