@@ -54,15 +54,16 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 ## Tech Stack
 🧩 Backend
+| Component    | Technology                       |
+| ------------ | -------------------------------- |
+| Framework    | **Spring Boot 3.5.7**            |
+| Security     | **Spring Security 6.5.5 + JWT**  |
+| Database     | **PostgreSQL + Spring Data JPA** |
+| API Docs     | **Swagger / OpenAPI 3.1**        |
+| Testing      | **JUnit 5, Mockito**             |
+| Build Tool   | **Maven**                        |
+| Java Version | **JDK 21**                       |
 
-- Component Technology
-- Framework Spring Boot 3.5.7
-- Security Spring Security 6.5.5 + JWT
-- Database PostgreSQL + Spring Data JPA
-- API Docs Swagger / OpenAPI 3.1
-- Testing JUnit 5, Mockito
-- Build Tool Maven
-- Java Version JDK 21
 
 ## ⚡ Frontend
 
