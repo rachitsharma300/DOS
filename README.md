@@ -76,11 +76,12 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 
 ## ☁️ Cloud Services
+| Service             | Provider                |
+| ------------------- | ----------------------- |
+| Backend Deployment  | **Render**              |
+| Frontend Deployment | **Netlify**             |
+| Database            | **PostgreSQL (Render)** |
 
-- Service Provider
-- Backend Deployment Render
-- Frontend Deployment Netlify
-- Database PostgreSQL (Render)
 
 ## 📋 API Endpoints
 🔑 Authentication Endpoints
