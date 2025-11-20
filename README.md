@@ -1,5 +1,7 @@
 # 🛒 Dynamic Online Shopping – Ecommerce Platform
 
+![6755915c-aff2-4a87-822d-1174a11e2ebe (1)](https://github.com/user-attachments/assets/914dd50d-5e80-4541-a8b8-936a4e641b69)
+
 A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 - User authentication and authorization
