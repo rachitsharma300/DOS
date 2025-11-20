@@ -258,9 +258,9 @@ Run Backend Tests
 ./mvnw test
 ```
 
-
+<details> <summary><strong>📁 stayease.backend</strong></summary>
+  
 ```
-
 com.dynamiconlineshopping.backend
 ├── config
 │ ├── CorsConfig
@@ -321,6 +321,7 @@ resources
 ├── templates
 └── application.properties
 ```
+</details>
 
 ## 📁 Project Structure
 
