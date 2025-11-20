@@ -103,12 +103,13 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 ---
 🛒 Cart Endpoints
+| Method | Endpoint         | Description      | Access   |
+| ------ | ---------------- | ---------------- | -------- |
+| GET    | `/api/cart`      | Get user cart    | **User** |
+| POST   | `/api/cart`      | Add to cart      | **User** |
+| PUT    | `/api/cart/{id}` | Update cart item | **User** |
+| DELETE | `/api/cart/{id}` | Remove item      | **User** |
 
-Method Endpoint Description Access
-GET /api/cart Get user cart User
-POST /api/cart Add item to cart User
-PUT /api/cart/{id} Update cart item User
-DELETE /api/cart/{id} Remove from cart User
 
 📦 Order Endpoints
 
