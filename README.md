@@ -85,10 +85,11 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 ## 📋 API Endpoints
 🔑 Authentication Endpoints
+| Method | Endpoint             | Description         | Access     |
+| ------ | -------------------- | ------------------- | ---------- |
+| POST   | `/api/auth/register` | User Registration   | **Public** |
+| POST   | `/api/auth/login`    | Login & Token Issue | **Public** |
 
-- Method Endpoint Description Access
-- POST /api/auth/register User Registration Public
-- POST /api/auth/login Login & Token Issuance Public
 
 🏪 Product Endpoints
 
