@@ -66,13 +66,14 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 
 
 ## ⚡ Frontend
+| Component        | Technology                |
+| ---------------- | ------------------------- |
+| Framework        | **React 18**              |
+| Routing          | **React Router DOM**      |
+| HTTP Client      | **Axios**                 |
+| State Management | **React Context API**     |
+| UI Components    | **Custom CSS / Tailwind** |
 
-- Component Technology
-- Framework React 18
-- Routing React Router DOM
-- HTTP Client Axios
-- State Management React Context API
-- UI Components Custom CSS/Tailwind
 
 ## ☁️ Cloud Services
 
