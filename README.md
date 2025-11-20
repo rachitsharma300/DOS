@@ -166,19 +166,16 @@ Prerequisites
 
 ---
 
-Local Development Setup
+## Local Development Setup
 
 1️⃣ Clone Repository
-
 ```bash
 git clone https://github.com/rachitsharma300/DOS.git
 cd DOS/dynamic-online-shopping-backend
 ## Project Structure
 ```
+
 2️⃣ Database Setup
-
-Create PostgreSQL database:
-
 ```sql
 CREATE DATABASE dynamiconline;
 ```
