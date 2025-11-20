@@ -159,12 +159,12 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 ##⚙️ Installation & Setup
 Prerequisites
 
-· Java 21+
-· PostgreSQL 15+
-· Maven 3.6+
-· Node.js 18+
+- Java 21+
+- PostgreSQL 15+
+- Maven 3.6+
+- Node.js 18+
 
-
+---
 
 Local Development Setup
 
