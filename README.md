@@ -200,14 +200,13 @@ npm install
 npm start
 ```
 
-🚀 Deployment
-
+## 🚀 Deployment
 Backend (Render)
 
-· Connect GitHub repository
-· Set root directory: dynamic-online-shopping-backend
-· Build Command: ./mvnw clean package -DskipTests
-· Start Command: java -jar target/dynamic-online-shopping-backend-0.0.1-SNAPSHOT.jar
+- Connect GitHub repository
+- Set root directory: dynamic-online-shopping-backend
+- Build Command: ./mvnw clean package -DskipTests
+- Start Command: java -jar target/dynamic-online-shopping-backend-0.0.1-SNAPSHOT.jar
 
 
 Frontend (Netlify)
