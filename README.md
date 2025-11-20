@@ -258,7 +258,7 @@ Run Backend Tests
 ./mvnw test
 ```
 
-<details> <summary><strong>📁 stayease.backend</strong></summary>
+<details> <summary><strong>📁 com.dynamiconlineshopping.backend</strong></summary>
   
 ```
 com.dynamiconlineshopping.backend
@@ -323,8 +323,8 @@ resources
 ```
 </details>
 
-## 📁 Project Structure
-
+<details> <summary><strong>📁 com.dynamiconlineshopping.frontend</strong></summary>
+  
 ```
 dynamic-online-shopping-frontend/
 ├── node_modules/
@@ -369,6 +369,8 @@ dynamic-online-shopping-frontend/
 └── package.json
 
 ```
+</details>
+
 👨‍💻 Author
 
 Rachit Sharma
