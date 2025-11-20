@@ -121,10 +121,12 @@ A full-featured Ecommerce System built with Spring Boot & React that supports:
 ---
 
 💳 Payment Endpoints
+| Method | Endpoint                               | Description    | Access   |
+| ------ | -------------------------------------- | -------------- | -------- |
+| POST   | `/api/payments/create-order/{orderId}` | Create payment | **User** |
+| POST   | `/api/payments/verify`                 | Verify payment | **User** |
 
-Method Endpoint Description Access
-POST /api/payments/create-order/{orderId} Create payment order User
-POST /api/payments/verify Verify payment User
+---
 
 👨‍💼 Admin Endpoints
 
